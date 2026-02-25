@@ -15,9 +15,8 @@ const HeroSection = () => {
         >
           <source src="/videos/lunarbase_hero.webm" type="video/webm" />
         </video>
-        {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background" />
-        <div className="absolute inset-0 scanline pointer-events-none opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/20 to-background" />
+        <div className="absolute inset-0 scanline pointer-events-none opacity-20" />
       </div>
 
       {/* Navigation */}
@@ -31,7 +30,7 @@ const HeroSection = () => {
           LUNARBASE
         </div>
         <div className="hidden md:flex items-center gap-8 font-body text-sm tracking-wider text-muted-foreground">
-          {["MISSION", "TECHNOLOGY", "EXPLORE", "CONTACT"].map((item) => (
+          {["PROBLEM", "SOLUTION", "ECONOMICS", "ROADMAP"].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
@@ -51,14 +50,14 @@ const HeroSection = () => {
           transition={{ duration: 2, delay: 0.8 }}
           className="mb-6 h-px w-16 bg-primary/40"
         />
-        
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1 }}
           className="mb-4 font-body text-sm tracking-[0.5em] text-muted-foreground uppercase"
         >
-          Beyond the horizon
+          Lunarbase Labs presents
         </motion.p>
 
         <motion.h1
@@ -67,17 +66,17 @@ const HeroSection = () => {
           transition={{ duration: 1.2, delay: 1.3 }}
           className="font-display text-5xl font-bold tracking-wider text-foreground text-glow-strong md:text-7xl lg:text-8xl"
         >
-          LUNARBASE
+          PROPDEX
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.8 }}
-          className="mt-6 max-w-lg font-body text-base text-muted-foreground leading-relaxed md:text-lg"
+          className="mt-6 max-w-2xl font-body text-base text-muted-foreground leading-relaxed md:text-lg"
         >
-          Establishing humanity's first permanent presence on the lunar surface.
-          The future begins where the Earth ends.
+          The proprietary liquidity engine for Base. Oracle-anchored, inventory-aware,
+          deterministic onchain execution — no solver market, no intent auction, no off-chain negotiation.
         </motion.p>
 
         <motion.div
@@ -87,24 +86,39 @@ const HeroSection = () => {
           className="mt-10 flex gap-4"
         >
           <a
-            href="#mission"
+            href="#solution"
             className="border-glow rounded-sm border border-primary/30 bg-primary/10 px-8 py-3 font-display text-xs tracking-[0.3em] text-primary transition-all duration-500 hover:bg-primary/20 hover:border-primary/50"
           >
             EXPLORE
           </a>
           <a
-            href="#technology"
+            href="#problem"
             className="rounded-sm border border-border px-8 py-3 font-display text-xs tracking-[0.3em] text-muted-foreground transition-all duration-500 hover:border-primary/30 hover:text-primary"
           >
-            LEARN MORE
+            READ LITEPAPER
           </a>
+        </motion.div>
+
+        {/* TL;DR Badge */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 2.8 }}
+          className="mt-12 max-w-xl rounded-sm border border-border/50 bg-secondary/30 px-6 py-4"
+        >
+          <p className="font-body text-xs leading-relaxed text-muted-foreground">
+            <span className="text-primary font-display tracking-wider">TL;DR</span> — A single contract holds liquidity,
+            prices it against live oracle feeds, and serves deterministic quotes.
+            Two functions: <span className="text-foreground font-mono text-[11px]">quoteExactIn</span> (never reverts) and{" "}
+            <span className="text-foreground font-mono text-[11px]">swapExactIn</span> (fills or reverts with a reason).
+          </p>
         </motion.div>
 
         {/* Scroll Indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 3 }}
+          transition={{ duration: 1, delay: 3.2 }}
           className="absolute bottom-10 flex flex-col items-center gap-2"
         >
           <span className="font-body text-[10px] tracking-[0.4em] text-muted-foreground">

@@ -1,6 +1,8 @@
 import HeroSection from "@/components/HeroSection";
-import FeaturesSection from "@/components/FeaturesSection";
-import MissionSection from "@/components/MissionSection";
+import ProblemSection from "@/components/ProblemSection";
+import SolutionSection from "@/components/SolutionSection";
+import EconomicsSection from "@/components/EconomicsSection";
+import SecurityRoadmapSection from "@/components/SecurityRoadmapSection";
 import CTASection from "@/components/CTASection";
 import ParticleField from "@/components/ParticleField";
 
@@ -10,8 +12,10 @@ const Index = () => {
       <ParticleField />
       <div className="relative z-10">
         <HeroSection />
-        <FeaturesSection />
-        <MissionSection />
+        <ProblemSection />
+        <SolutionSection />
+        <EconomicsSection />
+        <SecurityRoadmapSection />
         <CTASection />
       </div>
     </div>
